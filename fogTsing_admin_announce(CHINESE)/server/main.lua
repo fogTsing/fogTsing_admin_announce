@@ -12,11 +12,14 @@ local adminSteamId = {
     "steam:你的Steam16进制码"
 }
 
-RegisterServerEvent("checkSteamIdTrueOrFalse")
-AddEventHandler("checkSteamIdTrueOrFalse", function()
+RegisterCommand("admin_announce", function(source,args)
+    announceArgs = table.concat(args," ")  
     ergodic(adminSteamId)
     if (playerIdentifier == GetPlayerIdentifiers(source)[1]) then
-        TriggerClientEvent("announce", -1)
+        TriggerClientEvent("announce", -1, announceArgs)
     end
     playerIdentifier = nil
-end)
+end, false)
+
+
+
