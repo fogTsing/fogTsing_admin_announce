@@ -9,7 +9,7 @@ function ergodic(tab)
 end
 
 local adminSteamId = {
-    "steam:11000013223e33e"
+    "steam:YOUR STEAM HEX"
 }
 
 RegisterServerEvent("checkSteamIdTrueOrFalse")
