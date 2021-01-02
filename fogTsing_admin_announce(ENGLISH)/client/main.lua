@@ -18,13 +18,8 @@ AddEventHandler('esx:setJob', function(job)
   PlayerData.job = job
 end)
 
-RegisterCommand("admin_announce", function(source,args)
-  announceArgs = table.concat(args," ")  
-  TriggerServerEvent("checkSteamIdTrueOrFalse")
-end, false)
-
 RegisterNetEvent("announce")
-AddEventHandler("announce", function()
-  ESX.Scaleform.ShowFreemodeMessage('~o~Moderator Announce', announceArgs, 5)
-  announceArgs = nil
+AddEventHandler("announce", function(args)
+  ESX.Scaleform.ShowFreemodeMessage('~o~Moderator Announce', args, 5)
+  args = nil
 end)
