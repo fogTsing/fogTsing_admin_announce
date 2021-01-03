@@ -12,13 +12,23 @@ local adminSteamId = {
     "steam:YOUR STEAM HEX"
 }
 
+function checkSteamIdIsInTheTable(YOURSTEAMID)
+    for _, v in pairs(adminSteamId) do
+        if YOURSTEAMID == v then
+            return true
+        else
+            return false
+        end
+    end
+end
+
 RegisterCommand("admin_announce", function(source,args)
     announceArgs = table.concat(args," ")  
-    ergodic(adminSteamId)
-    if (playerIdentifier == GetPlayerIdentifiers(source)[1]) then
+    if (checkSteamIdIsInTheTable(GetPlayerIdentifiers(source)[1])) then
         TriggerClientEvent("announce", -1, announceArgs)
+    elseif (checkSteamIdIsInTheTable(GetPlayerIdentifiers(source)[1]) == false) then
+        TriggerClientEvent("send_no_perms_to_player", source)
     end
-    playerIdentifier = nil
 end, false)
 
 
