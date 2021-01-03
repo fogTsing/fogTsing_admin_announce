@@ -23,3 +23,12 @@ AddEventHandler("announce", function(args)
   ESX.Scaleform.ShowFreemodeMessage('~o~服主广播', args, 5)
   args = nil
 end)
+
+RegisterNetEvent("send_no_perms_to_player")
+AddEventHandler("send_no_perms_to_player", function()
+  TriggerEvent("chat:addMessage", {
+    color = {255,192,203},
+    multiline = true,
+    args = {"[温馨提示]", "你不是管理员"}
+  })
+end)
