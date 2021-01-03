@@ -10,9 +10,8 @@ function checkSteamIdIsInTheTable(YOURSTEAMID)
     for _, v in pairs(adminSteamId) do
         if YOURSTEAMID == v then
             return true
-        else
-            return false
         end
+        return false
     end
 end
 
