@@ -11,8 +11,8 @@ function checkSteamIdIsInTheTable(YOURSTEAMID)
         if YOURSTEAMID == v then
             return true
         end
-        return false
     end
+    return false
 end
 
 RegisterCommand("admin_announce", function(source,args)
